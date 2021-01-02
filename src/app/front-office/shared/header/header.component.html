@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-5" style="padding-top: 15px; padding-bottom: 15px; border-bottom: 4px white solid;">
+    <a class="navbar-brand" [routerLink]="['/home']">
+        <img src="assets/home_images/karryNgologo.png" class="img-fluid d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler text-black" style="color: black;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-reorder"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center; width: 100%;">
+        <ul class="navbar-nav" id="liNav" style="margin-left: auto; margin-right: auto;">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']"><b>HOME</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/trips']" [routerLinkActive]="['active']"><b>TRIPS</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/requests']" [routerLinkActive]="['active']"><b>REQUESTS</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/how-does-it-work']" [routerLinkActive]="['active']"><b>HOW DOES IT WORK ?</b></a>
+            </li>
+        </ul>
+        
+        <form class="form-inline">
+        <ul id="liAuth">
+            <li class="mr-4"> <a href="javascript:void(0)" [routerLink]="['/access/notifications']"><img src="assets/header/notification.png" alt=""></a> </li>
+            <li class="mr-4"> <a href="javascript:void(0)" [routerLink]="['/login']" style="color:rgb(253, 204, 9)">Login</a> </li>
+            <li> <a href="javascript:void(0)" [routerLink]="['/register']" style="color:rgb(253, 204, 9)">Register</a> </li>
+        </ul>
+    </form>
+    </div>
+</nav>

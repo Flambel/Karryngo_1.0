@@ -1,0 +1,35 @@
+<div style="background-color: #ffffffda;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 bg-white my-5" style="margin-right: auto; margin-left: auto; border-radius: 15px;">
+        <div class="p-4"
+          style="margin-bottom: 20px; margin-top: 20px; text-align: center; border-bottom: 1px solid gray;">
+
+          <h3><b>Verify Email</b></h3>
+        </div>
+        <div class="authBlock">
+          <h3>Thank You for Registering</h3>
+
+          <div class="formGroup" *ngIf="authService.userData as user">
+            <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+            <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+          </div>
+
+          <!-- Calling SendVerificationMail() method using authService Api -->
+          <div class="formGroup">
+            <!-- <button type="button" class="btn btn-success" (click)="authService.SendVerificationMail()"> -->
+            <button type="button" class="btn btn-success">
+              <i class="fas fa-redo-alt"></i>
+              Resend Verification Email
+            </button>
+          </div>
+
+        </div>
+        <br><br><br>
+        <div class="redirectToLogin">
+          <span>Go back to?<span class="redirect" routerLink="/sign-in" style="color: blue;"> Sign in</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
