@@ -1,0 +1,66 @@
+<!--
+
+<ngx-spinner name="login">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+-->
+
+
+<!-- Default form login -->
+<div class="container mt-2">
+  <a href="" class="logo-login">
+    <img class="logo" src="assets/img/logo.png" alt="KarrynGo logo">
+  </a>
+  <div class="container cont-login">
+    <!--<form [formGroup]="formLogin" class="text-center border border-light cont-form" method="post" action="javascript:void(0)">-->
+    <form #form="ngForm" (ngSubmit)="signIn(form.value)" class="text-center border border-light cont-form" action="javascript:void(0)" method="post">
+
+
+      <p class="h4 mb-4 jaune">Sign in</p>
+
+      <!-- Email -->
+      <input type="email" name="email" [(ngModel)]="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+      <!-- Password -->
+      <input type="password" name="password" [(ngModel)]="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+      <div class="d-flex justify-content-around">
+        <div>
+          <!-- Remember me -->
+          <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+        </div>
+        <div>
+          <!-- Forgot password -->
+          <a routerLink="/forgot-password" class="jaune">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Sign in button -->
+      <button type="submit" class="my-4 next-button btn-sin">Sign In</button>
+
+      <!-- Register -->
+      <p>Not a member?
+        <a routerLink="/user-registration" class="jaune">Register</a>
+      </p>
+
+      <!-- Social login -->
+      <p>or sign in with:</p>
+      <a type="button">
+        <i class="fab fa-facebook-f fa-2x jaune"></i>
+      </a>
+      <a type="button" class="mx-2">
+        <i class="fab fa-twitter fa-2x jaune"></i>
+      </a>
+      <a type="button" class="mx-2">
+        <i class="fab fa-linkedin-in fa-2x jaune"></i>
+      </a>
+      <a class="mx-2">
+        <!-- <i class="fab fa-github"></i> -->
+        <i class="fab fa-github fa-2x jaune"></i>
+      </a>
+
+    </form>
+    <!-- Default form login -->
+  </div>
+</div>

@@ -1,75 +1,20 @@
 <!doctype html>
-<htgml lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>karryngo</title>
-        <base href="/">
-        <link rel="icon" href="assets/homestyle/images/favicon.png" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"> -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
-        </script>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <meta charset="utf-8">
+  <title>Karryngo</title>
+  <base href="/">
 
-        <style media="screen">
-            #loader {
-                position: absolute;
-                display: block;
-                left: 0;
-                right: 0;
-                margin-left: auto;
-                margin-right: auto;
-                z-index: 1;
-                -webkit-transform: translate3d(0, -50%, 0);
-                -moz-transform: translate3d(0, -50%, 0);
-                -o-transform: translate3d(0, -50%, 0);
-                -ms-transform: translate3d(0, -50%, 0);
-                transform: translate3d(0, -50%, 0);
-                text-align: center;
-                border-radius: 50%;
-                width: 45px;
-                height: 45px;
-                top: 50%;
-            }
-        </style>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+<body>
+  <app-root></app-root>
+</body>
 
-            gtag('config', 'YOUR-ID');
-        </script>
-    </head>
-
-    <body class="mat-typography">
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="/__/firebase/8.2.1/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
-
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
-        
-        <app-root>
-            <div id="loader"><img src="assets/img/loader-preview.svg" alt="loading"></div>
-        </app-root>
-        <noscript>Please enable JavaScript to continue using this application.</noscript>
-    </body>
-
-    </html>
+</html>
