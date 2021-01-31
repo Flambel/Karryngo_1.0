@@ -4,7 +4,7 @@ import { AuthGuard } from './shared/core/guards/auth.guard';
 
 import { WelcomeComponent } from './front-office/welcome/welcome.component';
 import { UserRegistrationComponent } from './front-office/user-registration/user-registration/user-registration.component';
-import { PostRequest1Component } from './back-office/users/post-request1/post-request1.component';
+import { PostRequest1Component } from './back-office/users/request/post-request1/post-request1.component';
 import { LoginComponent } from './front-office/login/login.component';
 import { ForgotPasswordComponent } from './front-office/forgot-password/forgot-password.component';
 import { ProfileCarrierComponent } from './back-office/users/profile/profile-carrier/profile-carrier.component';
@@ -16,20 +16,20 @@ import { ViewTripCarrierShipmentComponent } from './front-office/view-trip/view-
 // tslint:disable-next-line:max-line-length
 import { ViewTripTransportPersonsComponent } from './front-office/view-trip/view-trip-transport-persons/view-trip-transport-persons.component';
 import { TestPagesComponent } from './test-pages/test-pages.component';
-import { PostRequestColis1Component } from './back-office/users/post-request-colis/post-request-colis1/post-request-colis1.component';
-import { PostRequestColis2Component } from './back-office/users/post-request-colis/post-request-colis2/post-request-colis2.component';
-import { PostRequestColis3Component } from './back-office/users/post-request-colis/post-request-colis3/post-request-colis3.component';
+import { PostRequestColis1Component } from './back-office/users/request/post-request-colis/post-request-colis1/post-request-colis1.component';
+import { PostRequestColis2Component } from './back-office/users/request/post-request-colis/post-request-colis2/post-request-colis2.component';
+import { PostRequestColis3Component } from './back-office/users/request/post-request-colis/post-request-colis3/post-request-colis3.component';
 // tslint:disable-next-line:max-line-length
-import { PostRequestTransport1Component } from './back-office/users/post-request-transport/post-request-transport1/post-request-transport1.component';
+import { PostRequestTransport1Component } from './back-office/users/request/post-request-transport/post-request-transport1/post-request-transport1.component';
 // tslint:disable-next-line:max-line-length
-import { PostRequestTransport2Component } from './back-office/users/post-request-transport/post-request-transport2/post-request-transport2.component';
+import { PostRequestTransport2Component } from './back-office/users/request/post-request-transport/post-request-transport2/post-request-transport2.component';
 // tslint:disable-next-line:max-line-length
-import { PostRequestTransport3Component } from './back-office/users/post-request-transport/post-request-transport3/post-request-transport3.component';
+import { PostRequestTransport3Component } from './back-office/users/request/post-request-transport/post-request-transport3/post-request-transport3.component';
 // tslint:disable-next-line:max-line-length
-import { PostTripCarrierShipper1Component } from './back-office/users/post-trip-carrier-shipper/post-trip-carrier-shipper1/post-trip-carrier-shipper1.component';
+import { PostTripCarrierShipper1Component } from './back-office/users/trips/post-trip-carrier-shipper/post-trip-carrier-shipper1/post-trip-carrier-shipper1.component';
 // tslint:disable-next-line:max-line-length
-import { PostTripCarrierShipper2Component } from './back-office/users/post-trip-carrier-shipper/post-trip-carrier-shipper2/post-trip-carrier-shipper2.component';
-import { PostTripTransport1Component } from './back-office/users/post-trip-transport1/post-trip-transport1.component';
+import { PostTripCarrierShipper2Component } from './back-office/users/trips/post-trip-carrier-shipper/post-trip-carrier-shipper2/post-trip-carrier-shipper2.component';
+import { PostTripTransport1Component } from './back-office/users/trips/post-trip-transport1/post-trip-transport1.component';
 import { PrivacyPolicyComponent } from './shared/components/privacy-policy/privacy-policy.component';
 import { AboutUsComponent } from './front-office/about-us/about-us.component';
 import { TermsAndConditionsComponent } from './shared/components/terms-and-conditions/terms-and-conditions.component';
@@ -37,14 +37,17 @@ import { RegisterComponent } from './front-office/register/register.component'
 import { HowDoesItWorkComponent } from './front-office/how-does-it-work/how-does-it-work.component';
 import { RequestsComponent } from './front-office/requests/requests.component';
 import { BlankPageComponent } from './shared/blank-page/blank-page.component';
+import { AdminLayoutComponent } from './back-office/users/admin-layout/admin-layout.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  {
-    path: '',
-    canActivate: [AuthGuard],
-    runGuardsAndResolvers: 'always',
-    component: WelcomeComponent
-  },
+  // {
+  //   path: '',
+  //   canActivate: [AuthGuard],
+  //   runGuardsAndResolvers: 'always',
+  //   component: WelcomeComponent
+  // },
   {
     path: 'terms-and-conditions',
     component: TermsAndConditionsComponent
@@ -171,13 +174,28 @@ const routes: Routes = [
     component: HowDoesItWorkComponent
   },
   {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+        {
+      path: '',
+      loadChildren: './back-office/users/admin-layout/admin-layout.module#AdminLayoutModule'
+  }],  
+  // canActivate: [AuthGuard] ,
+},
+  {
     path: '**',
     component: BlankPageComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes, {
+    useHash: true
+ })],
+  exports: []
 })
 export class AppRoutingModule { }

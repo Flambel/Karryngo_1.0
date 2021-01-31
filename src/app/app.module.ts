@@ -10,16 +10,16 @@ import { WelcomeComponent } from './front-office/welcome/welcome.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppBootStrapModule } from './shared/app-boot-strap/app-boot-strap.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { PostRequest1Component } from './back-office/users/post-request1/post-request1.component';
-import { PostRequestColis1Component } from './back-office/users/post-request-colis/post-request-colis1/post-request-colis1.component';
-import { PostRequestColis2Component } from './back-office/users/post-request-colis/post-request-colis2/post-request-colis2.component';
-import { PostRequestColis3Component } from './back-office/users/post-request-colis/post-request-colis3/post-request-colis3.component';
-import { PostRequestTransport1Component } from './back-office/users/post-request-transport/post-request-transport1/post-request-transport1.component';
-import { PostRequestTransport2Component } from './back-office/users/post-request-transport/post-request-transport2/post-request-transport2.component';
-import { PostRequestTransport3Component } from './back-office/users/post-request-transport/post-request-transport3/post-request-transport3.component';
-import { PostTripCarrierShipper1Component } from './back-office/users/post-trip-carrier-shipper/post-trip-carrier-shipper1/post-trip-carrier-shipper1.component';
-import { PostTripCarrierShipper2Component } from './back-office/users/post-trip-carrier-shipper/post-trip-carrier-shipper2/post-trip-carrier-shipper2.component';
-import { PostTripTransport1Component } from './back-office/users/post-trip-transport1/post-trip-transport1.component';
+import { PostRequest1Component } from './back-office/users/request/post-request1/post-request1.component';
+import { PostRequestColis1Component } from './back-office/users/request/post-request-colis/post-request-colis1/post-request-colis1.component';
+import { PostRequestColis2Component } from './back-office/users/request/post-request-colis/post-request-colis2/post-request-colis2.component';
+import { PostRequestColis3Component } from './back-office/users/request/post-request-colis/post-request-colis3/post-request-colis3.component';
+import { PostRequestTransport1Component } from './back-office/users/request/post-request-transport/post-request-transport1/post-request-transport1.component';
+import { PostRequestTransport2Component } from './back-office/users/request/post-request-transport/post-request-transport2/post-request-transport2.component';
+import { PostRequestTransport3Component } from './back-office/users/request/post-request-transport/post-request-transport3/post-request-transport3.component';
+import { PostTripCarrierShipper1Component } from './back-office/users/trips/post-trip-carrier-shipper/post-trip-carrier-shipper1/post-trip-carrier-shipper1.component';
+import { PostTripCarrierShipper2Component } from './back-office/users/trips/post-trip-carrier-shipper/post-trip-carrier-shipper2/post-trip-carrier-shipper2.component';
+import { PostTripTransport1Component } from './back-office/users/trips/post-trip-transport1/post-trip-transport1.component';
 import { UserRegistration1Component } from './front-office/user-registration/user-registration1/user-registration1.component';
 import { UserRegistration2Component } from './front-office/user-registration/user-registration2/user-registration2.component';
 import { UserRegistration3Component } from './front-office/user-registration/user-registration3/user-registration3.component';
@@ -79,6 +79,12 @@ import { HowDoesItWorkComponent } from './front-office/how-does-it-work/how-does
 import { TripsModule } from './back-office/users/trips/trips.module';
 import { RequestsComponent } from './front-office/requests/requests.component';
 import { BlankPageComponent } from './shared/blank-page/blank-page.component';
+import { AdminLayoutComponent } from './back-office/users/admin-layout/admin-layout.component';
+import { NavbarModule } from './back-office/users/shared/navbar/navbar.module';
+import { FooterModule } from './back-office/users/shared/footer/footer.module';
+import { RouterModule } from '@angular/router';
+import { UserService } from './back-office/users/shared/services/user.service';
+import { SidebarModule } from './back-office/users/sidebar/sidebar.module';
 
 @NgModule({
   declarations: [
@@ -116,12 +122,14 @@ import { BlankPageComponent } from './shared/blank-page/blank-page.component';
     RegisterComponent,
     HowDoesItWorkComponent,
     RequestsComponent,
-    BlankPageComponent
+    BlankPageComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TripsModule,
+    RouterModule,
     NgbModule,
     AppBootStrapModule,
     MDBBootstrapModule.forRoot(),
@@ -166,10 +174,13 @@ import { BlankPageComponent } from './shared/blank-page/blank-page.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NavbarModule,
+    FooterModule,
+    SidebarModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  // schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
